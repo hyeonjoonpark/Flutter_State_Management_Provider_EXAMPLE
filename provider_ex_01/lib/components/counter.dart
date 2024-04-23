@@ -4,10 +4,10 @@ class CounterA extends StatelessWidget {
   final int counter;
   final void Function() increment;
   const CounterA({
-    Key? key,
+    super.key,
     required this.counter,
     required this.increment,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,12 +17,12 @@ class CounterA extends StatelessWidget {
         children: [
           Text(
             "$counter",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: increment,
-            child: Text('Increment'),
+            child: const Text('Increment'),
           ),
         ],
       ),
@@ -33,9 +33,9 @@ class CounterA extends StatelessWidget {
 class Middle extends StatelessWidget {
   final int counter;
   const Middle({
-    Key? key,
+    super.key,
     required this.counter,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +48,7 @@ class Middle extends StatelessWidget {
           ContainerB(
             counter: counter, // parent에서 받아서 전달만 하는 목적
           ),
-          Sibling()
+          const Sibling()
         ],
       ),
     );
@@ -58,9 +58,9 @@ class Middle extends StatelessWidget {
 class ContainerB extends StatelessWidget {
   final int counter;
   const ContainerB({
-    Key? key,
+    super.key,
     required this.counter,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -83,16 +83,16 @@ class ContainerB extends StatelessWidget {
 }
 
 class Sibling extends StatelessWidget {
-  const Sibling({Key? key}) : super(key: key);
+  const Sibling({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[100],
       padding: const EdgeInsets.all(20.0),
-      child: Column(
+      child: const Column(
         children: [
-          const Text("Sibling"),
+          Text("Sibling"),
         ],
       ),
     );
