@@ -13,3 +13,11 @@ class Counter with ChangeNotifier {
   }
 }
 ```
+
+### ChangeNotifierProvider
+
+ChangeNotifierProvider = ChangeNotifier + Provider
+
+역할
+1. ChangeNotifier의 인스턴스 생성
+2. ChangeNotifier를 필요로 하는 위젯에 ChangeNotifier를 쉽게 엑세스 할 수 있도록 하는 수단을 제공한다
