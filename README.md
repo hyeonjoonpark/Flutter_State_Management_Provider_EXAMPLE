@@ -20,4 +20,11 @@ ChangeNotifierProvider = ChangeNotifier + Provider
 
 역할
 1. ChangeNotifier의 인스턴스 생성
+  - 필요할 때 생성
+  - 필요없어지면 메모리에서 없애준다
 2. ChangeNotifier를 필요로 하는 위젯에 ChangeNotifier를 쉽게 엑세스 할 수 있도록 하는 수단을 제공한다
+  - 생성자 필요없이 Provider.of를 이용하여 ChangeNotifier의 인스턴스에 쉽게 엑세스 할 수 있다
+    - Provider.of<T>(context) : 변화가 있으면 UI rebuild 가능
+    - Provider.of<T>(context, listen: false) : ChangeNotifier 인스턴스를 엑세스만 하고 변화를 listen 하지 않는다
+
+
