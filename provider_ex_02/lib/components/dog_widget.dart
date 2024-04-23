@@ -37,7 +37,10 @@ class Age extends StatelessWidget {
         ElevatedButton(
           onPressed: () {
             // Provider.of 함수의 context를 사용하여 Dog 객체의 grow 메서드 호출
-            Provider.of<Dog>(context, listen: false).grow();
+            Provider.of<Dog>(context,
+                    listen:
+                        false /** listen값을 false를 줘서 rebuild를 막음 (클릭 시 화면 변화 없음) */)
+                .grow();
           },
           child: Text('Grow'),
         ),
