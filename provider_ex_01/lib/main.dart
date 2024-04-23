@@ -41,15 +41,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("counter"),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CounterA(),
+            Container(
+              color: Colors.blue[100],
+              padding: const EdgeInsets.all(20.0),
+              child: Text("MyHomePage"),
+            ),
             SizedBox(height: 20),
-            CounterB(),
-            SizedBox(height: 20),
-            Sibling(),
+            CounterA(counter: counter, increment: increment),
+            const SizedBox(height: 20),
+            const SizedBox(height: 20),
+            Middle(
+              counter: counter,
+            ),
           ],
         ),
       ),
