@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Provider Example 03'),
+        title: const Text('Provider Example 03'),
       ),
       body: Center(
         child: Column(
@@ -58,11 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              // Provider.of 함수의 context를 사용하여 Dog 객체의 name 속성에 접근
               '- name : ${dog.name}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             BreedAndAge(dog: dog),
           ],
         ),

@@ -1,41 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:provider_ex_03/models/dog.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_ex_04/models/dog.dart';
 
 class BreedAndAge extends StatelessWidget {
-  final Dog dog;
-  const BreedAndAge({super.key, required this.dog});
+  const BreedAndAge({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Text(
-          '- breed : ${dog.breed}',
+          '- breed : ${Provider.of<Dog>(context).breed}',
           style: const TextStyle(fontSize: 20),
         ),
         const SizedBox(height: 20),
-        Age(dog: dog),
+        Age(),
       ],
     );
   }
 }
 
 class Age extends StatelessWidget {
-  final Dog dog;
-  const Age({super.key, required this.dog});
+  const Age({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          '- age : ${dog.age}',
+          // Provider.of 함수의 context를 사용하여 Dog 객체의 age 속성에 접근
+          '- age : ${Provider.of<Dog>(context).age}',
           style: const TextStyle(fontSize: 20),
         ),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            dog.grow();
+            // Provider.of 함수의 context를 사용하여 Dog 객체의 grow 메서드 호출
+            Provider.of<Dog>(context, listen: false).grow();
           },
           child: const Text('Grow'),
         ),
