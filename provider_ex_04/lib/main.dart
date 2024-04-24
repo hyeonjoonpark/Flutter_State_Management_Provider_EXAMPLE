@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 20),
-            BreedAndAge(),
+            const BreedAndAge(),
           ],
         ),
       ),
