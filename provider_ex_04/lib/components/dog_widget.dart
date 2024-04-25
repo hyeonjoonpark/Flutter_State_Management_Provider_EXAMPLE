@@ -10,11 +10,11 @@ class BreedAndAge extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          '- breed : ${Provider.of<Dog>(context).breed}',
+          '- breed : ${Provider.of<Dog>(context, listen: false).breed}',
           style: const TextStyle(fontSize: 20),
         ),
         const SizedBox(height: 20),
-        Age(),
+        const Age(),
       ],
     );
   }
